@@ -2,10 +2,14 @@ class World{
 
     character = new Character();
     enemies = [
-    new Pufferfish(),
-    new Pufferfish(),
-    new Pufferfish(),
+    new Chicken(),
+    new Chicken(),
+    new Chicken(),
 ];
+    clouds =[ 
+        new Clouds()
+    ];
+
 canvas;
 ctx;
 
@@ -22,7 +26,12 @@ constructor(canvas){
         this.ctx.drawImage(this.character.img, this.character.x, this.character.y, this.character.height, this.character.width);
         this.enemies.forEach(enemy => {
             //Zeile wird ausgeführt für jedes Element "new Pufferfish()"
-            this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height)
+            this.ctx.drawImage(enemy.img, enemy.x, enemy.y, enemy.width, enemy.height);
+        })
+            this.clouds.forEach(cloud => {
+                //Zeile wird ausgeführt für jedes Element "new Pufferfish()"
+            this.ctx.drawImage(cloud.img, cloud.x, cloud.y, cloud.width, cloud.height);  
+
         })
 
 
